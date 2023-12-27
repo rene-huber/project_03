@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{margin: 0;
+padding: 0;
+box-sizing: border-box;}
+
+
+.main-header {
+  background-color: #000000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.logo-container {
+  max-width: 200px; 
+  margin: 0 auto; 
+}
+
+.logo-container img {
+  width: 100%; 
+  height: auto; 
+}
+
+
+
+.card-container { 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+  grid-template-columns: repeat(2, 1fr);}
+}
+@media (max-width: 480px) {
+  .card-container {
+  grid-template-columns: repeat(1, 1fr);}
+}
+.card {
+  height: fit-content;
+  width: 300px;
+  background-color: #f8f8f8;
+  margin: 71px auto;
+  border-radius: 11px;
+  box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.2);
+  
+  
+}
+
+
+.card__image {
+  height: fit-content;
+  width: 100%;
+  border-radius: 11px 11px 0 0;
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  
+}
+
+
+
+.card__info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+.card__content {
+  padding: 10px 20px 20px;
+  display: grid;
+  gap: 20px;
+}
+
+.card__info-description {
+  text-align: right;
+ 
+}
+
+li {
+  list-style: none;
+}
+
+.background__unknown {
+  border-bottom: 7px solid rgb(137, 0, 165);
+}
+.background__Alive {
+  border-bottom: 7px solid rgb(0, 184, 0);
+}
+.background__Dead {
+  border-bottom: 7px solid rgb(46, 43, 46);
+  background-color: #ffffff;
+  filter:contrast(0.7) grayscale(.1);
+}
+.background__Dead:hover {
+  filter: grayscale(0);
+}
+
+
+
+
+
+
+.card__info-description.Alive {
+  position: relative;
+  color: green; 
+  text-transform: uppercase; 
+  display: inline-block; 
+}
+
+.card__info-description.Alive::before {
+  content: "•";
+  margin-left: 5px;
+  animation: changeColor 0.1s infinite alternate; 
+  font-size: 27px;
+  
+}
+
+@keyframes changeColor {
+  from {
+    color: green;
+  }
+  to {
+    color: rgb(187, 255, 0);
+  }
+}
+
+
+
+
+.card__info-description.Dead {
+  color: rgb(224, 78, 168);
+}
+
+.card__info-description.unknown {
+  color: rgb(107, 0, 128);
+}
